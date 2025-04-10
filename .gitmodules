@@ -1,0 +1,6 @@
+[submodule "cheetah"]
+	path = cheetah
+	url = ./cheetah
+[submodule "frontend"]
+	path = frontend
+	url = ./frontend
