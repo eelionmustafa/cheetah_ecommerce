@@ -1,0 +1,29 @@
+.book {
+    height: 300vh; /* tall enough for scroll */
+    position: relative;
+  }
+
+  /* Each page fixed on screen */
+  .page {
+    position: sticky;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #4A6B3B;
+    font-family: 'Arial', sans-serif;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Page background colors matching your palette */
+  .page:nth-child(1) { background: white; z-index: 3; }
+  .page:nth-child(2) { background: #E8D3A0; z-index: 2; }
+  .page:nth-child(3) { background: #D97A36; color: #FFF; z-index: 1; }
