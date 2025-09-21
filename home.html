@@ -11,41 +11,22 @@
 </head>
 <body>
     <main>
-            <section class="container">
-                <header class="header">
-                    <div class="logo-container">
-                    <img src="logo.png" alt="Cheetah logo" class="logo">
-                    <h2 id="cheetah">cheetah</h2>
-                    </div>
-                    <nav class="nav">
-                        <a href="home.html" class="nav-link">Home</a>
-                        <a href="about.html" class="nav-link">Our story</a>
-                        <a href="categories.html" class="nav-link">Categories</a>
-                        <a href="products.html" class="nav-link">Products</a>   
-                    <button class="wooden-cart-button">
-                    <svg viewBox="0 0 24 24">
-                    <path
-                        d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0 0 21.42 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
-                    ></path>
-                    </svg>
-                    </button>
-                    </nav>
-                 </header>
-
-        </section>
-
+        
+             
+      <div id="navbar">
+        <!--navbar will be added here-->
+      </div>
         <div class="video-container">
     <video id="mainVideo" autoplay muted playsinline loop>
       <source src="video/cheetah.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <!--
-  <h2 class="slogan">Where speed meets excellence.</h2>
-  -->
-<h2 class="h2" style="text-align: center; font-family: 'Tangerine'; font-size: 40px;">Shop by Category</h2>
+
+<h2 class="h2" style="text-align: center; font-family: 'Tangerine'; font-size: 40px; margin-top:30px;">Featured Categories</h2>
 
 <div class="button-wrapper">
+  
   <!-- Back button -->
   <button class="back-btn">
     <svg
@@ -53,7 +34,7 @@
       stroke-linejoin="round"
       stroke-linecap="round"
       stroke-width="2"
-      stroke="#D97A36"
+      stroke="currentColor"
       fill="none"
       viewBox="0 0 24 24"
       height="22"
@@ -64,32 +45,34 @@
       <path d="M19 12H5"></path>
     </svg>
     <span class="back-text">Back</span>
+
   </button> 
 
-  <!-- Buttons container -->
   <div class="button-group">
-    <!-- Electronics -->
-    <button class="custom-btn">
-      <svg class="icon text-cyan" stroke="#D97A36" viewBox="0 0 24 24">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-        <line x1="8" y1="21" x2="16" y2="21"></line>
-        <line x1="12" y1="17" x2="12" y2="21"></line>
-      </svg>
-      Electronics
-    </button>
+    
+    <button class="custom-btn" data-category="electronics">
+  <svg class="icon text-cyan" stroke="currentColor" viewBox="0 0 24 24">
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+    <line x1="8" y1="21" x2="16" y2="21"></line>
+    <line x1="12" y1="17" x2="12" y2="21"></line>
+  </svg>
+  Electronics
+</button>
+ 
 
     <!-- Accessories -->
-    <button class="custom-btn">
+    <button class="custom-btn" data-category="accessories">
       <svg class="icon text-blue" stroke="#D97A36" viewBox="0 0 24 24">
         <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
         <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2"></path>
         <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2"></path>
       </svg>
       Accessories
+      
     </button>
 
     <!-- Games -->
-    <button class="custom-btn">
+    <button class="custom-btn" data-category="games">
       <svg class="icon text-yellow" stroke="#D97A36" viewBox="0 0 24 24">
         <line x1="6" y1="12" x2="10" y2="12"></line>
         <line x1="8" y1="10" x2="8" y2="14"></line>
@@ -100,53 +83,145 @@
         <rect x="2" y="6" width="20" height="12" rx="2"></rect>
       </svg>
       Games
+      </a>
     </button>
 
     <!-- Office Supplies -->
-    <button class="custom-btn">
+    <button class="custom-btn" data-category="office">
+
       <svg class="icon text-orange" stroke="#D97A36" viewBox="0 0 24 24">
         <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
         <path d="M16 3H8a2 2 0 0 0-2 2v2h12V5a2 2 0 0 0-2-2z"></path>
       </svg>
       Office Supplies
+      </a>
     </button>
 
     <!-- School Supplies -->
-    <button class="custom-btn">
+    <button class="custom-btn" data-category="school">
       <svg class="icon text-green" stroke="#D97A36" viewBox="0 0 24 24">
         <path d="M12 20h9"></path>
         <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path>
       </svg>
       School Supplies
+      </a>
     </button>
 
     <!-- Perfumes -->
-    <button class="custom-btn">
+    <button class="custom-btn" data-category="perfumes">
+
       <svg class="icon text-pink" stroke="#D97A36" viewBox="0 0 24 24">
         <path d="M10 2v7.31"></path>
         <path d="M14 9.3V2"></path>
         <path d="M5.52 20h12.96a1 1 0 0 0 .87-1.5l-6.48-11.5a1 1 0 0 0-1.74 0L4.65 18.5a1 1 0 0 0 .87 1.5z"></path>
       </svg>
       Perfumes
+      </a>
     </button>
+
+<button class="next-btn">
+  <span class="next-text">Next</span>
+  <svg
+    class="icon"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    stroke-width="2"
+    stroke="#D97A36"
+    fill="none"
+    viewBox="0 0 24 24"
+    height="22"
+    width="22"
+    xmlns="http://www.w3.org/2000/svg">
+    <path d="m12 5 7 7-7 7"></path>
+    <path d="M5 12h14"></path>
+  </svg>
+</button>
+
+
 
   </div>
 
- 
-<div id="hiddenSection" class="hidden">
-    <h2></h2> 
-    <p></p>
 </div>
-</main>
-<footer class="footer">
-        <div class="row">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-        </div>
-        <p class="footer-text">© 2025 Cheetah. All rights reserved.</p>
-</footer>
-    <script src="script.js"></script>
+   <!--Slider-->
+<div class="container1 electronics" id="electronics" data-parallax="true" style="display: flex; align-items: center; gap: 40px; padding: 20px;">
+
+  <!-- 3D Model -->
+  <model-viewer
+      src="media/iphone17.glb" 
+      alt="iPhone 17 Pro Max" 
+      auto-rotate
+      rotation-per-second="40deg"
+      shadow-intensity="1"
+      style="width: 400px; height: 400px;">
+  </model-viewer>
+
+  <!-- Text Section next to the model -->
+  <div class="text-product">
+    <h1 style="margin: 0;">iPhone 17 Pro Max</h1>
+    <a href="electronics.html" class="button" style="background-color:#d97a36; color:white; text-decoration:none; border-radius:5px;">
+      View Products
+    </a>
+  </div>
+
+</div>
+
+
+
+<div class="container1" id="accessories" data-parallax="true">
+  <img src="media/accessorie.png" alt="Accessories" class="content-img">
+  <div class="text-section">
+    <h2>ACCESSORIES</h2>
+    <span style="font-weight:bold;">Accessories</span>
+    <p class="price">Varies</p>
+    <a href="accessories.html" class="button" style="background-color:#d97a36">View Products</a>
+  </div>
+</div>
+
+<div class="container1" id="games" data-parallax="true">
+  <img src="media/games.png" alt="Games" class="content-img">
+  <div class="text-section">
+    <h2>GAMES</h2>
+    <span style="font-weight:bold;">Games</span>
+    <p class="price">Varies</p>
+    <a href="games.html" class="button" style="background-color:#ffd700">View Products</a>
+  </div>
+</div>
+
+<div class="container1" id="office" data-parallax="true">
+  <img src="media/office.png" alt="Office Supplies" class="content-img">
+  <div class="text-section">
+    <h2>OFFICE SUPPLIES</h2>
+    <span style="font-weight:bold;">Office Supplies</span>
+    <p class="price">Varies</p>
+    <a href="office.html" class="button" style="background-color:#ffa500">View Products</a>
+  </div>
+</div>
+
+<div class="container1" id="school" data-parallax="true">
+  <img src="media/" alt="School Supplies" class="content-img">
+  <div class="text-section">
+    <h2>SCHOOL SUPPLIES</h2>
+    <span style="font-weight:bold;">School Supplies</span>
+    <p class="price">Varies</p>
+    <a href="school.html" class="button" style="background-color:#008000">View Products</a>
+  </div>
+</div>
+
+<div class="container1" id="perfumes" data-parallax="true">
+  <img src="media/perfumes.png" alt="Perfumes" class="content-img">
+  <div class="text-section">
+    <h2>PERFUMES</h2>
+    <span style="font-weight:bold;">Perfumes</span>
+    <p class="price">Varies</p>
+    <a href="perfumes.html" class="button" style="background-color:#ff69b4">View Products</a>
+  </div>
+  </div>
+
+
+<div id="footer">
+  <!--footer will be added here-->
+</div>
+<script src="script.js"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
 </html>
