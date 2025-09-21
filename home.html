@@ -136,34 +136,25 @@
     <path d="M5 12h14"></path>
   </svg>
 </button>
-
-
-
   </div>
 
 </div>
    <!--Slider-->
-<div class="container1 electronics" id="electronics" data-parallax="true" style="display: flex; align-items: center; gap: 40px; padding: 20px;">
+<div class="container2" id="electronics" data-parallax="true">
 
-  <!-- 3D Model -->
-  <model-viewer
-      src="media/iphone17.glb" 
-      alt="iPhone 17 Pro Max" 
-      auto-rotate
-      rotation-per-second="40deg"
-      shadow-intensity="1"
-      style="width: 400px; height: 400px;">
+ <div class="model-text-pair">
+  <model-viewer id="iphone17" src="media/iphone17.glb" alt="iPhone 17 Pro Max" auto-rotate rotation-per-second="40deg" shadow-intensity="1" style="width: 400px; height: 400px;">
+    <h2>Iphone 17 Pro</h2>
+  <button>View Product</button>
   </model-viewer>
 
-  <!-- Text Section next to the model -->
-  <div class="text-product">
-    <h1 style="margin: 0;">iPhone 17 Pro Max</h1>
-    <a href="electronics.html" class="button" style="background-color:#d97a36; color:white; text-decoration:none; border-radius:5px;">
-      View Products
-    </a>
-  </div>
-
+  <model-viewer id="macbook" src="media/macbook.glb" alt="Macbook Pro A13 Chip" auto-rotate rotation-per-second="40deg" shadow-intensity="1" style="width: 400px; height: 400px;">
+    <h2>Macbook Pro </h2>
+     <button>View Product</button>
+  </model-viewer>
 </div>
+ 
+ 
 
 
 
