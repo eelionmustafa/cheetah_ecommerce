@@ -101,7 +101,7 @@ main {
   
 }
 
-
+/*
 .footer {
    width: 100%;
    background-color: hsla(206, 100%, 1%, 1);
@@ -110,62 +110,38 @@ main {
    text-align: center;
    line-height: 60px;
 }
-
+*/
 .model-text-pair{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: row;
     flex-wrap:wrap;
-    margin-left: 150px;
-    margin-top:60px;
-    margin-bottom:150px;
-
 }   
 
-
-.product-name{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap; 
-    gap:200px;
-}
-
 .container2{
+    width:auto;
+    height:100%;
     background-color:#f2da9dff;
-    border-radius:12px;
-    margin:50px;
-
+    border-radius:20px;
+    margin:30px;
 }
-/* Make model-viewers sit side by side */
+
 .model-text-pair {
-    display: flex;             /* arrange children horizontally */
-    justify-content: center;   /* center models in container */
-    align-items: flex-start;   /* top-align */
-    gap: 40px;                 /* space between models */
-    position: relative;        /* needed for absolute positioning of buttons */
+    display: flex;           
+    justify-content: center;   
+    align-items: flex-start;  
+    gap: 40px;               
+    position: relative;    
 }
 
-/* Stack each model’s content internally if needed */
 .model-text-pair model-viewer {
     width: 400px;
     height: 430px;
     object-fit: cover;
-    position: relative;        /* to position button inside each model */
+    position: relative; 
 }
 
-/* Headings inside model-viewers */
-.model-text-pair h2 {
-    font-weight: 700;
-    font-size: x-large;
-    color: white;
-    position: absolute;        /* overlay heading on model */
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-}
 
-/* Buttons overlayed inside model-viewers */
 .model-text-pair button {
     position: absolute;
     bottom: 20%;
@@ -187,3 +163,4 @@ main {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
 }
+
