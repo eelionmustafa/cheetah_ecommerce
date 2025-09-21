@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured products</title>
+    <style>
+
+            /* Featured Products CSS */
+    .featured-products {
+      margin: 40px 0;
+    }
+    .featured-products h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .products-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 180px;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .product-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .product-price {
+      color: #e74c3c;
+      margin-bottom: 10px;
+    }
+    .buy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #3498db;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .buy-btn:hover {
+      background: #2980b9;
+    }
+  </style>
+</head>
+<body>
+    <div class="featured-products">
+        <div class="products-grid" id="products-grid">
+    <!-- Products will be injected here -->
+  </div>
+    </div>
+
+    <script>
+    const productsData = {
+      electronics: [
+        { name: "iPhone 15", price: "$999", img: "https://via.placeholder.com/150" },
+        { name: "Samsung Galaxy S25", price: "$899", img: "https://via.placeholder.com/150" },
+        { name: "Bose Headphones", price: "$199", img: "https://via.placeholder.com/150" }
+      ],
+      accessories: [
+        { name: "Leather Bag", price: "$120", img: "https://via.placeholder.com/150" },
+        { name: "Sunglasses", price: "$80", img: "https://via.placeholder.com/150" },
+        { name: "Wristwatch", price: "$250", img: "https://via.placeholder.com/150" }
+      ],
+      games: [
+        { name: "PlayStation 5", price: "$499", img: "https://via.placeholder.com/150" },
+        { name: "Xbox Series X", price: "$499", img: "https://via.placeholder.com/150" },
+        { name: "Nintendo Switch", price: "$299", img: "https://via.placeholder.com/150" }
+      ],
+      office: [
+        { name: "Office Chair", price: "$150", img: "https://via.placeholder.com/150" },
+        { name: "Desk Lamp", price: "$40", img: "https://via.placeholder.com/150" },
+        { name: "Stapler", price: "$15", img: "https://via.placeholder.com/150" }
+      ],
+      school: [
+        { name: "Notebook", price: "$5", img: "https://via.placeholder.com/150" },
+        { name: "Backpack", price: "$35", img: "https://via.placeholder.com/150" },
+        { name: "Pencil Set", price: "$10", img: "https://via.placeholder.com/150" }
+      ],
+      perfumes: [
+        { name: "Chanel No. 5", price: "$120", img: "https://via.placeholder.com/150" },
+        { name: "Dior Sauvage", price: "$110", img: "https://via.placeholder.com/150" },
+        { name: "Gucci Bloom", price: "$130", img: "https://via.placeholder.com/150" }
+      ]
+    };
+
+    
+function renderProducts(category) {
+  const grid = document.getElementById("products-grid");
+  grid.innerHTML = "";
+  if (!productsData[category]) return; // safety check
+  productsData[category].forEach(product => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+    card.innerHTML = `
+      <img src="${product.img}" alt="${product.name}">
+      <div class="product-name">${product.name}</div>
+      <div class="product-price">${product.price}</div>
+      <a href="#" class="buy-btn">Buy Now</a>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// Wait until DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Add listener to each button
+  document.querySelectorAll(".custom-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const category = btn.getAttribute("data-category");
+      renderProducts(category);
+    });
+  });
+
+  // Initialize with Electronics
+  renderProducts("electronics");
+  });
+  </script>
+</body>
+</html>
