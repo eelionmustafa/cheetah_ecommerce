@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="buttons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Story</title>
+
+    <style>
+
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    font-family: Arial, sans-serif; 
+    font-size: 16px;         
+    color: #796f6f;             
+    background-color: black;
+    margin:0;
+}
+
+main {
+  flex: 1;
+    padding-bottom: 80px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; 
+  gap: 8px;
+  
+}            
+
+.logo {
+  width: 90px;
+  height:90px;    
+}
+
+#cheetah{
+    font-family: 'Tangerine', cursive;
+    font-size: 32px;
+    color: #4A6B3B;
+    align-self:flex-start ;
+    margin-top:70px;
+
+}
+
+#cheetah:hover{
+    color: #D97A36;
+    cursor: pointer;
+}
+
+.header{
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.nav{
+   
+    display: flex;
+    gap: 20px;
+}
+
+.container {
+   
+    background-color: #E8D3A0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    padding: 15px;
+
+}
+.nav-link{
+    text-decoration: none;
+    color:#1C1C1C;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover{
+    color: #D97A36;
+}
+
+      .headings {
+        margin-top: 40px;
+        display: flex;
+        color: #d4b99eff;
+        letter-spacing: 2px;
+      }
+
+      .organelo {
+        font-family: Loubag;
+        position: relative;
+        left: 10%;
+        font-size: 100px;
+      }
+
+      .journey1 {
+        font-size: 40px;
+        font-family: Loubag;
+        position: absolute;
+        top: 42%;
+        left: 35%;
+        color:black;
+      }
+
+      .journey2 {
+        font-size: 40px;
+        font-family: Loubag;
+        position: absolute;
+        top: 54%;
+        left: 50%;
+      }
+      span {
+        font-family: Loubag;
+        font-size: 40px;
+        color: #d4b99eff;
+      }
+
+      .container2 {
+        position: absolute;
+        top: 140%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 530px;
+        background: black;
+        box-shadow: 0 30px 50px #dbdbdb;
+
+      }
+      .slide {
+        width: 80%;
+        height: 50%;
+      }
+      
+      .container2 .slide .item {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 20px;
+        box-shadow: 0 30px 50px #505050;
+        background-position: 50% 50%;
+        background-size: cover;
+        display: inline-block;
+        transition: 0.5s;
+      }
+
+      .slide .item:nth-child(1), 
+      .slide .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide .item:nth-child(3) {
+        left: 50%;
+      }
+
+      .slide .item:nth-child(4) {
+        left: calc(50% + 220px);
+      }
+
+      .slide .item:nth-child(n + 5) {
+        left: calc(50% + 440px);
+        opacity: 0;
+      }
+
+      .item .content {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        width: 300px;
+        text-align: left;
+        backdrop-filter: blur(3px);
+        color: white;
+        transform: translate(0, -50%);
+        font-family: "Quicksand";
+        display: none;
+      }
+
+      .slide .item:nth-child(2) .content {
+        display: block;
+      }
+
+      .content .name1 {
+        font-size: 40px;
+        font-family: Loubag;
+        letter-spacing: 1px;
+        font-weight: bold;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
+      }
+
+      .content .des {
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
+      }
+
+      @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translate(0, 100px);
+            filter: blur(33);
+        }
+        to {
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0);
+        }
+      }
+
+      .button {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        background: transparent;
+      }
+
+      .button:hover {
+        background: transparent;
+      }
+
+      .button button {
+        width: 40px;
+        height: 35px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        margin: 0 5px;
+        border: 1px solid black;
+        transition: 0.3s;
+      }
+
+      .button button:hover {
+        background: #000;
+        color: #feb200;
+      }
+.bag {
+            padding: 2rem;
+            position: absolute;
+            top: 190%;
+            left: 20%;
+        }
+        .quotes {
+            font-family: Loubag;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+
+        .slider-wrapper {
+            position: relative;
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .slider {
+            display: flex;
+            aspect-ratio: 16 / 9;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            box-shadow: 0 1.5rem 3rem -0.75rem rgba(255, 255, 255, 0.6);
+            border-radius: 30px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color:rgba(212, 185, 158, 1);      }
+
+
+        .slider::-webkit-scrollbar {
+            display: none;
+        }
+
+        .slider p {
+            flex: 1 0 100%;
+            scroll-snap-align: start;
+            text-align: center;
+            font-size: 35px;
+            padding-top: 120px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .slider-nav {
+            display: flex;
+            column-gap: 1rem;
+            position: absolute;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .slider-nav a {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0.75;
+            transition: opacity 250ms ease;
+        }
+
+        .slider-nav a:hover {
+            opacity: 1;
+        }
+
+        .rounded-section {
+            background-color: #000;
+            width: 97%;
+            height: 550px;
+            padding: 30px 20px;
+            position: relative;
+            margin-top: 115%;
+            border-bottom-left-radius: 70px; 
+            border-bottom-right-radius: 70px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #feb200;
+            }
+
+            .rounded-section h1 {
+            font-size: 70px; 
+            position: relative;
+            left: 5%;
+            font-family: Loubag;
+            text-align: left;
+            margin: 0;
+            color: #d4b99eff;
+            max-width: 60%; 
+            }
+
+            .explore-button {
+            background-color: #d4b99eff;
+            color: #000;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            border: none;
+            border-radius: 20px;
+            position: absolute;
+            left: 65%;
+            top: 67%;
+            transition: all 0.3s ease;
+            }
+
+            .explore-button:hover {
+            background-color: #000; 
+            color: #;
+            }
+
+            .custom-footer {
+
+            height: 250px;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            width: 100%;
+            top: 410%;
+            bottom: 0;
+            left: 0;
+            margin: 0%;
+            }
+
+            #logo_footer {
+                margin-bottom: 60px;
+                margin-top: 60px;
+            }
+        
+
+            .footer-nav {
+            position: relative;
+            top: 10%;
+            margin-top: 40px;
+            margin-bottom: 40px; 
+            }
+
+            .footer-policies {
+            margin-top: 70px;
+            margin-bottom: 20px; 
+            
+            }
+
+            .footer-link, .policy-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+            margin: 0 10px; 
+            font-weight: bold;
+            }
+            
+            .policy-link {
+                font-size: 14px;
+            }
+
+            .footer-link:hover, .policy-link:hover {
+            color: #fff; 
+            }
+
+            .separator {
+            color: #000;
+            margin: 0 5px;
+            font-size: medium; 
+            }
+
+            .social-icons a {
+            display: inline-block;
+            margin: 20px 10px 0; 
+            transition: transform 0.9s ease;
+            }
+
+            .social-icons a img {
+            width: 20px; 
+            height: 20px;
+            }
+
+            .social-icons a:hover {
+            transform: scale(1.2);
+            }
+
+            #black {
+                color: #000;
+                font-weight: 600;
+            }
+
+    </style>
+</head>
+<body>
+    <main>
+    <div id="navbar"></div>
+    
+    <div class="headings">
+    <h1 class="organelo">CHEETAH,</h1>
+    <h2 class="journey1">our <span>Mission</span> to deliver</h2>
+    <h2 class="journey2">products with <span>Speed</span> and Care.</h2>
+</div>
+
+
+    <div class="container2">
+    <div class="slide">
+        <div class="item" style="background-image: url(media/.jpg);">
+            <div class="content">
+                <div class="name1">Speed</div>
+                <div class="des">Our commitment to speed ensures your orders reach you faster, so you never have to wait for what you love.</div>
+            </div>
+        </div>
+
+        <div class="item" style="background-image: url(media/.jpg);">
+            <div class="content">
+                <div class="name1">Quality</div>
+                <div class="des">We handpick the finest products, delivering premium quality straight to your doorstep every time.</div>
+            </div>
+        </div>
+
+        <div class="item" style="background-image: url(media/.jpg);">
+            <div class="content">
+                <div class="name1">Trust</div>
+                <div class="des">Building trust is at the heart of everything we do, from secure checkout to reliable deliveries.</div>
+            </div>
+        </div>
+
+        <div class="item" style="background-image: url(media/.jpg);">
+            <div class="content">
+                <div class="name1">Innovation</div>
+                <div class="des">We innovate constantly to make your shopping experience seamless, easy, and enjoyable.</div>
+            </div>
+        </div>
+
+        <div class="item" style="background-image: url(media/.jpg);">
+            <div class="content">
+                <div class="name1">Customer Care</div>
+                <div class="des">Our customer care is our priority, ensuring every interaction leaves you satisfied and valued.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+
+  <section class="bag">
+    <h1 class="quotes">Our Favorite Quotes</h1>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <p id="slide-1"><i>“Fast delivery isn’t just convenience; <br>it’s the promise of keeping life moving smoothly.”</i></p>
+            <p id="slide-2"><i>“Quality products create experiences that <br>customers remember and trust.”</i></p>
+            <p id="slide-3"><i>“Every package we send is a commitment <br>to care, reliability, and delight.”</i></p>
+            <p id="slide-4"><i>“Shopping should feel effortless — <br>from browsing to doorstep delivery.”</i></p>
+            <p id="slide-5"><i>“The best ecommerce moments are those that <br>connect people to the things they love, fast and easy.”</i></p>
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+            <a href="#slide-5"></a>
+        </div>
+    </div>
+</section>
+    <div class="rounded-section">
+    <h1>Discover <br> Our Fast & <br> Reliable Products</h1>
+    <a href="products.html" class="explore-button">Explore Cheetah's Products</a>
+</div>
+</main>
+
+    <script>
+        let next = document.querySelector('.next');
+        let prev = document.querySelector('.prev');
+
+        next.addEventListener('click', function(){
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').appendChild(items[0]);
+        })
+
+        prev.addEventListener('click', function(){
+            let items = document.querySelectorAll('.item');
+            document.querySelector('.slide').prepend(items[items.length - 1]);
+        })
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
