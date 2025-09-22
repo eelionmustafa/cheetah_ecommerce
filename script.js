@@ -4,7 +4,7 @@ fetch('navbar.html')
   .then(response => response.text())
   .then(data => {
     document.getElementById('navbar').innerHTML = data;
-    initCategorySlider(); // Initialize after navbar is loaded
+    initCategorySlider(); 
   });
 
 // Load footer
