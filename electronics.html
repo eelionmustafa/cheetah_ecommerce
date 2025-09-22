@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Category Filter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+    .filter {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      min-width: 180px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      flex: 1;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product h4 {
+      margin: 10px 0 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Product Category Filter</h2>
+  <div class="container">
+    <!-- Filter Section -->
+    <div class="filter">
+      <h3>Categories</h3>
+      <label><input type="checkbox" value="electronics">Electronics</label><br>
+      <label><input type="checkbox" value="accessories">Accessories</label><br>
+      <label><input type="checkbox" value="games">Games</label><br>
+      <label><input type="checkbox" value="office">Office Supplies</label><br>
+      <label><input type="checkbox" value="school">School Supplies</label><br>
+      <label><input type="checkbox" value="perfumes">Perfumes</label>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products" id="product-list">
+      <div class="product" data-category="electronics">
+        <h4>Iphone 17 Pro</h4>
+        <img src="media/apple_watch.glb">
+    </div>
+      <div class="product" data-category="Electronics"><h4>Laptop</h4></div>
+      <div class="product" data-category="Clothing"><h4>T-shirt</h4></div>
+      <div class="product" data-category="Home"><h4>Coffee Maker</h4></div>
+      <div class="product" data-category="Clothing"><h4>Jacket</h4></div>
+      <div class="product" data-category="Shoes"><h4>Sneakers</h4></div>
+    </div>
+  </div>
+
+  <script>
+    const checkboxes = document.querySelectorAll('.filter input[type="checkbox"]');
+    const products = document.querySelectorAll('.product');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        // Get selected categories
+        const selected = Array.from(checkboxes)
+                              .filter(i => i.checked)
+                              .map(i => i.value);
+
+        products.forEach(product => {
+          const category = product.getAttribute('data-category');
+          if (selected.length === 0 || selected.includes(category)) {
+            product.style.display = 'block'; // show
+          } else {
+            product.style.display = 'none'; // hide
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
